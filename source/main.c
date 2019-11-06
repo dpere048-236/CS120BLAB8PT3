@@ -13,13 +13,13 @@
 #include "simAVRHeader.h"
 #endif
 void ADC_init() {
-	ADCRSA |= (1 << ADEN) | (1 << ADSC) | (1 << ADATE);
+	ADCSRA |= (1 << ADEN) | (1 << ADSC) | (1 << ADATE);
 }
 int main(void) {
     /* Insert DDR and PORT initializations */
 	DDRA = 0x00; PORTA = 0xFF; //initialize DDRA as inputs
 	DDRB = 0xFF; PORTB = 0x00; //init port B to 0s and outputs
-	DDRD - 0xFF; PORTD = 0x00;
+	DDRD = 0xFF; PORTD = 0x00;
 //	TimerSet(300); //leds timer light for 300ms
 //	TimerOn();
 	ADC_init();
